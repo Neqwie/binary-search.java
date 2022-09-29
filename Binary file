@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class MaIn {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int[] a = new int[n];
+        for(int i = 0; i < m; i++){
+            int k = sc.nextInt();
+            System.out.println(BinFindering(a, k));
+        }
+    }
+    static int BinFindering(int[] a, int k){
+        int l = -1;
+        int r = a.length;
+        int count = 0;
+        while(l + 1 < r){
+            int mid = (l + r) /2;
+            if(mid < k){
+                l = mid;
+            }else
+                r = mid;
+            count++;
+        }
+        return count;
+    }
+}//шаманская херня Дримура и Бугона - Иерусалим
